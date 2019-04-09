@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontologydesignpatterns.org/opla"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ontologydesignpatterns.org/opla">
+    <Prefix name="" IRI="http://ontologydesignpatterns.org/opla"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Pascal Hitzler, Cogan Shimizu, Quinn Hirt</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Axiom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Class"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Individual"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Module"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OntologicalCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OntologicalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ontology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#derivedFromModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#derivedFromPattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#generalizationOfModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#generalizationOfPattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRelatedModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRelatedPattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isNativeTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ofExternalType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reusesPatternAsTemplate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specializationOfModule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalClass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalIndividual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalPattern"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Axiom"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Class"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Class"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#ofExternalType"/>
+            <ObjectOneOf>
+                <NamedIndividual IRI="#externalClass"/>
+            </ObjectOneOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Individual"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Individual"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#ofExternalType"/>
+            <ObjectOneOf>
+                <NamedIndividual IRI="#externalIndividual"/>
+            </ObjectOneOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Module"/>
+        <Class IRI="#OntologicalCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Module"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isNativeTo"/>
+            <Class IRI="#OntologicalCollection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Module"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isNativeTo"/>
+            <Class IRI="#OntologicalCollection"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OntologicalCollection"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#reusesPatternAsTemplate"/>
+            <Class IRI="#Pattern"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OntologicalEntity"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isNativeTo"/>
+            <Class IRI="#OntologicalCollection"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ontology"/>
+        <Class IRI="#OntologicalCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ontology"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#isNativeTo"/>
+            </ObjectInverseOf>
+            <ObjectUnionOf>
+                <Class IRI="#Module"/>
+                <Class IRI="#OntologicalEntity"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pattern"/>
+        <Class IRI="#OntologicalCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pattern"/>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#reusesPatternAsTemplate"/>
+            </ObjectInverseOf>
+            <Class IRI="#OntologicalCollection"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#ofExternalType"/>
+            <ObjectOneOf>
+                <NamedIndividual IRI="#externalProperty"/>
+            </ObjectOneOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectUnionOf>
+            <Class IRI="#Module"/>
+            <Class IRI="#Pattern"/>
+        </ObjectUnionOf>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#isNativeTo"/>
+            </ObjectInverseOf>
+            <Class IRI="#OntologicalEntity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#externalClass"/>
+        </ObjectOneOf>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#ofExternalType"/>
+            </ObjectInverseOf>
+            <Class IRI="#Class"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#externalIndividual"/>
+        </ObjectOneOf>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#ofExternalType"/>
+            </ObjectInverseOf>
+            <Class IRI="#Individual"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#externalPattern"/>
+        </ObjectOneOf>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#ofExternalType"/>
+            </ObjectInverseOf>
+            <Class IRI="#Class"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#externalProperty"/>
+        </ObjectOneOf>
+        <ObjectAllValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#ofExternalType"/>
+            </ObjectInverseOf>
+            <Class IRI="#Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#derivedFromModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#derivedFromPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generalizationOfModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generalizationOfPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelatedModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelatedPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#specializationOfModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#derivedFromModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#derivedFromPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generalizationOfModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generalizationOfPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRelatedModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRelatedPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#specializationOfModule"/>
+        <Class IRI="#Module"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+        <Class IRI="#Pattern"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+
