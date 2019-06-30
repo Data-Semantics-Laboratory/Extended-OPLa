@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontologydesignpatterns.org/opla-core"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ontologydesignpatterns.org/opla-core">
+    <Prefix name="" IRI="http://ontologydesignpatterns.org/opla-core"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="opla" IRI="http://ontologydesignpatterns.org/opla#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Pascal Hitzler, Cogan Shimizu, Quinn Hirt</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Axiom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Class"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Individual"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Module"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OntologicalCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OntologicalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ontology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalClass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalIndividual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalPattern"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#externalProperty"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#derivedFromModule"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#derivedFromPattern"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#extractedFrom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#generalizationOfModule"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#generalizationOfPattern"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#hasRelatedModule"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#hasRelatedPattern"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#isNativeTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#ofExternalType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#reusesPatternAsTemplate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#specializationOfModule"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#specializationOfPattern"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Axiom"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Class"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Individual"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Module"/>
+        <Class IRI="#OntologicalCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ontology"/>
+        <Class IRI="#OntologicalCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pattern"/>
+        <Class IRI="#OntologicalCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <Class IRI="#OntologicalEntity"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#derivedFromModule</IRI>
+        <Literal>The annotated ontology is based off of some ontology module, but not necesarily a generalization or a specialization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#derivedFromPattern</IRI>
+        <Literal>The annotated ontology is based off of some Ontology Design Pattern, but not necesarily a generalization or a specialization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#extractedFrom</IRI>
+        <Literal>Is adapted from cp-annotation-schema This annotation should be used to indicate that a pattern has been created from where one originally did not exist. Otherwise, opla-core:derivedFrom should be used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#generalizationOfModule</IRI>
+        <Literal>The annotated ontology is derived from and generalized from the reference module.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#generalizationOfPattern</IRI>
+        <Literal>The annotated ontology is derived from and generalized by some reference Ontology Design Pattern.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRelatedModule</IRI>
+        <Literal>Is related to some other ontology module.  Does not need to be derived from, simply share in intent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRelatedPattern</IRI>
+        <Literal>Is related to some other Ontology Design Pattern.  Does not need to be derived from, simply share in intent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isNativeTo</IRI>
+        <Literal>Should be used to express the provenance of some ontological entity. This annotation is not functional, e.g. some entity may be native to more than one pattern, e.g. the Agent may belong to both AgentRole and Provenance patterns.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ofExternalType</IRI>
+        <Literal>Should be used to indicate that another pattern may hook into this entity. For example, a hook might indicate that the pattern developer acknowledges a certain concept is out of scope of the particular pattern.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#specializationOfModule</IRI>
+        <Literal>The annotated ontology is derived from and specialized by some reference module.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#specializationOfPattern</IRI>
+        <Literal>The annotated ontology is derived from and specialized by some reference Ontology Design Pattern.</Literal>
+    </AnnotationAssertion>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#derivedFromModule"/>
+        <IRI>#Module</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#derivedFromPattern"/>
+        <IRI>#Pattern</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#extractedFrom"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#generalizationOfModule"/>
+        <IRI>#Module</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#generalizationOfPattern"/>
+        <IRI>#Pattern</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#hasRelatedModule"/>
+        <IRI>#Module</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#hasRelatedPattern"/>
+        <IRI>#Pattern</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#isNativeTo"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#reusesPatternAsTemplate"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#specializationOfModule"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#specializationOfPattern"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#derivedFromModule"/>
+        <IRI>#Module</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#derivedFromPattern"/>
+        <IRI>#Pattern</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#extractedFrom"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#generalizationOfModule"/>
+        <IRI>#Module</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#generalizationOfPattern"/>
+        <IRI>#Pattern</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#hasRelatedModule"/>
+        <IRI>#Module</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#hasRelatedPattern"/>
+        <IRI>#Pattern</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#isNativeTo"/>
+        <IRI>#OntologicalEntity</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#isNativeTo"/>
+        <IRI>#Ontology</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ofExternalType"/>
+        <IRI>#Class</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ofExternalType"/>
+        <IRI>#Individual</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#ofExternalType"/>
+        <IRI>#Property</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#reusesPatternAsTemplate"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#specializationOfModule"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyDomain>
+    <AnnotationPropertyDomain>
+        <AnnotationProperty IRI="#specializationOfPattern"/>
+        <IRI>#OntologicalCollection</IRI>
+    </AnnotationPropertyDomain>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+

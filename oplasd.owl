@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://ontologydesignpatterns.org/opla-cp"
+     xml:base="http://ontologydesignpatterns.org/opla-sd"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://ontologydesignpatterns.org/opla-cp">
-    <Prefix name="" IRI="http://ontologydesignpatterns.org/opla-cp"/>
+     ontologyIRI="http://ontologydesignpatterns.org/opla-sd">
+    <Prefix name="" IRI="http://ontologydesignpatterns.org/opla-core"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -14,8 +15,8 @@
     <Prefix name="opla" IRI="http://ontologydesignpatterns.org/opla#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Quinn Hirt, Pascal Hitlzer, Cogan Shimizu</Literal>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Pascal Hitzler, Cogan Shimizu, Quinn Hirt</Literal>
     </Annotation>
     <Declaration>
         <Class IRI="http://ontologydesignpatterns.org/opla-core#Axiom"/>
@@ -57,22 +58,16 @@
         <NamedIndividual IRI="#externalProperty"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#addressesScenarios"/>
+        <AnnotationProperty IRI="#entityPosition"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#coversRequirement"/>
+        <AnnotationProperty IRI="#entityPositionX"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#hasCompentencyQuestion"/>
+        <AnnotationProperty IRI="#entityPositionY"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#hasConsequence"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="#hasUnitTest"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://ontologydesignpatterns.org/opla-core#Axiom"/>
@@ -104,68 +99,30 @@
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#addressesScenarios</IRI>
-        <Literal>Describes a potential or existing usecase or instantiation of the ontology design pattern. It should describe the commitments necesarry to make the instantiation possible.</Literal>
+        <IRI>#entityPosition</IRI>
+        <Literal>This property has a blank node as its target. This blank node is intended to “encapsulate” all other position related annotations.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#coversRequirement</IRI>
-        <Literal>Should point to a blank node, wherein a competency question and SPARQL query should be paired.</Literal>
+        <IRI>#entityPositionX</IRI>
+        <Literal>This property specifies the X coordinate (expressed as a double) of a node in a schema diagram.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasCompentencyQuestion</IRI>
-        <Literal>Points to an example competency question that can be evaluated against the annotated ontology, as expressed in natural language.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasConsequence</IRI>
-        <Literal>Describes a potential gain and drawback when using the annotated module or pattern. For example, it may be used to express the impact of an ontological commitment.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasUnitTest</IRI>
-        <Literal>Points to an example SPARQL query that can be evaluated against the content of the annotated ontology. It should be paired with a natural language description, e.g. Competency Question.</Literal>
+        <IRI>#entityPositionY</IRI>
+        <Literal>This property specifies the Y coordinate (expressed as a double) of a node in a schema diagram.</Literal>
     </AnnotationAssertion>
     <AnnotationPropertyRange>
-        <AnnotationProperty IRI="#addressesScenarios"/>
-        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
+        <AnnotationProperty IRI="#entityPositionX"/>
+        <AbbreviatedIRI>rdfs:Literal</AbbreviatedIRI>
     </AnnotationPropertyRange>
     <AnnotationPropertyRange>
-        <AnnotationProperty IRI="#coversRequirement"/>
-        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
-    </AnnotationPropertyRange>
-    <AnnotationPropertyRange>
-        <AnnotationProperty IRI="#hasCompentencyQuestion"/>
-        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
-    </AnnotationPropertyRange>
-    <AnnotationPropertyRange>
-        <AnnotationProperty IRI="#hasConsequence"/>
-        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
-    </AnnotationPropertyRange>
-    <AnnotationPropertyRange>
-        <AnnotationProperty IRI="#hasUnitTest"/>
-        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
+        <AnnotationProperty IRI="#entityPositionY"/>
+        <AbbreviatedIRI>rdfs:Literal</AbbreviatedIRI>
     </AnnotationPropertyRange>
     <AnnotationPropertyDomain>
-        <AnnotationProperty IRI="#addressesScenarios"/>
-        <IRI>#OntologicalCollection</IRI>
-    </AnnotationPropertyDomain>
-    <AnnotationPropertyDomain>
-        <AnnotationProperty IRI="#coversRequirement"/>
-        <IRI>#OntologicalCollection</IRI>
-    </AnnotationPropertyDomain>
-    <AnnotationPropertyDomain>
-        <AnnotationProperty IRI="#hasCompentencyQuestion"/>
-        <IRI>#OntologicalCollection</IRI>
-    </AnnotationPropertyDomain>
-    <AnnotationPropertyDomain>
-        <AnnotationProperty IRI="#hasConsequence"/>
-        <IRI>#OntologicalCollection</IRI>
-    </AnnotationPropertyDomain>
-    <AnnotationPropertyDomain>
-        <AnnotationProperty IRI="#hasUnitTest"/>
-        <IRI>#OntologicalCollection</IRI>
+        <AnnotationProperty IRI="#entityPosition"/>
+        <IRI>#Class</IRI>
     </AnnotationPropertyDomain>
 </Ontology>
 
